@@ -1,0 +1,30 @@
+@use 'variables' as *;
+
+.section-padding {
+  padding: $space-xl $space-md;
+
+  @media (max-width: $breakpoint-lg) {
+    padding: $space-lg $space-md;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    padding: $space-lg $space-sm;
+  }
+}
+
+.cta-link {
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+  background: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+  &:hover {
+    opacity: 0.6;
+  }
+}

@@ -1,0 +1,16 @@
+@use 'variables' as *;
+
+// Heading
+.text-heading {
+  font-size: $text-2xl;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+// Label / caption
+.text-label {
+  font-family: $font-sans;
+  font-size: 0.875rem;
+  color: $color-text-muted;
+}
