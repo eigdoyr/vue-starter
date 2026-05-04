@@ -9,13 +9,15 @@ Vue 3 + TypeScript + Vite + SCSS starter template.
 - **Vue 3** with Composition API and `<script setup>`
 - **TypeScript** with strict mode and path aliases
 - **Vite** with optimized config
+- **Vue Router** with Home + 404 routes
+- **Vitest** with @vue/test-utils for testing
 - **SCSS** with design token system (variables, mixins, animations, utilities)
 - **ESLint + Prettier** pre-configured
 - **Husky + lint-staged** for pre-commit hooks
 - **EditorConfig** for consistent formatting across editors
+- **GitHub Actions CI** for lint, test, and build
 - **Reusable composables** (`useMediaQuery`, `useClickOutside`)
 - **Generic components** — Navbar with mobile menu, Footer
-- **Folder conventions** — `components/`, `composables/`, `sections/`, `data/`, `styles/`, `utils/`
 
 ## Getting Started
 
@@ -23,25 +25,25 @@ Vue 3 + TypeScript + Vite + SCSS starter template.
 
 Click **Use this template** on GitHub, or clone:
 
-\`\`\`bash
-git clone <https://github.com/eigdoyr/vue-starter.git> my-project
+```bash
+git clone https://github.com/eigdoyr/vue-starter.git my-project
 cd my-project
 rm -rf .git
 git init
-\`\`\`
+```
 
 ### Install and run
 
-\`\`\`bash
+```bash
 npm install
 npm run dev
-\`\`\`
+```
 
 ### Build
 
-\`\`\`bash
+```bash
 npm run build
-\`\`\`
+```
 
 ## Testing
 
@@ -69,23 +71,25 @@ After cloning, update or replace:
 
 ## Project Structure
 
-\`\`\`
+```text
 src/
-├── assets/ # Images and static files (organize by section as needed)
-├── components/ # Reusable UI building blocks
-├── composables/ # Reusable logic (useMediaQuery, useClickOutside)
-├── data/ # Static content and type definitions
-├── sections/ # Page sections
-├── styles/ # SCSS design tokens and globals
-│ ├── \_variables.scss
-│ ├── \_mixins.scss
-│ ├── \_animations.scss
-│ ├── \_reset.scss
-│ ├── \_typography.scss
-│ ├── \_utilities.scss
-│ └── main.scss
-└── utils/ # Pure utility functions
-\`\`\`
+├── assets/          # Images and static files
+├── components/      # Reusable UI building blocks
+├── composables/     # Reusable logic (useMediaQuery, useClickOutside)
+├── data/            # Static content and type definitions
+├── router/          # Vue Router config
+├── sections/        # Page sections
+├── styles/          # SCSS design tokens and globals
+│   ├── _variables.scss
+│   ├── _mixins.scss
+│   ├── _animations.scss
+│   ├── _reset.scss
+│   ├── _typography.scss
+│   ├── _utilities.scss
+│   └── main.scss
+├── utils/           # Pure utility functions
+└── views/           # Page-level components (routed)
+```
 
 ## Conventions
 
@@ -94,7 +98,6 @@ src/
 Format: `<type>: <subject>`
 
 Types:
-
 - `feat` — new feature
 - `fix` — bug fix
 - `style` — formatting, no logic change
@@ -107,7 +110,6 @@ Example: `feat: add hero section`
 ### Component Structure
 
 Order within `.vue` files:
-
 1. `<template>`
 2. `<script setup lang="ts">`
 3. `<style lang="scss" scoped>`
@@ -124,6 +126,9 @@ Order within `.vue` files:
 - `@/` → `src/`
 - `@components/` → `src/components/`
 - `@composables/` → `src/composables/`
+- `@views/` → `src/views/`
+- `@router/` → `src/router/`
+- `@sections/` → `src/sections/`
 - `@styles/` → `src/styles/`
 - `@assets/` → `src/assets/`
 - `@data/` → `src/data/`
